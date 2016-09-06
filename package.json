@@ -1,12 +1,12 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "chat example whith tcp",
+  "description": "Chat Terminal",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Renan Bastos",
+  "author": "Renan Bastos - (renanbastos.tec@gmail.com)",
   "license": "ISC",
   "dependencies": {
     "net": "^1.0.2"
