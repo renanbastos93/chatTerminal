@@ -7,7 +7,7 @@
 #/clear
   with /clear clear terminal
   
-#Future
+#Future Implementations
   1. /private
   2. /close
   3. /createRoom
