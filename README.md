@@ -19,7 +19,10 @@
 #Install
   1. git clone
   2. npm install
-  3. node index.js
+  3. node server.js
+  4. node client.js (user 1)
+  5. node client.js (user 2)
+  6. ...
   
 #Version
   NodeJS 6.5.0
