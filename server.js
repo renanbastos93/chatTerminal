@@ -29,4 +29,10 @@ net.createServer((connection) => {
 	connection.write("Seja bem vindo!");
 	connection.on('data', (message) => send(message, connection));
 	connection.on('end', () => end(connection));
+	process.stdin.on('readable', () => {
+		let message = process.stdin.read();
+		if(!message) return;
+		let nickname = "Admin";
+		broadcast(nickname+" > "+message, connections);
+	});
 }).listen(3000);
