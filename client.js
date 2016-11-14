@@ -10,6 +10,7 @@ client.on('connect', () => client.write("Entrou na sala"));
 
 client.on('end', () => process.exit());
 
-read((message) => {
+read.line((message) => {
+	msgVerify(message);
 	client.write(message);
 });

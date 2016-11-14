@@ -1,4 +1,5 @@
 var net = require('net');
+var read = require('./lib/keyboard');
 
 var connections = [];
 var broadcast = (message, origin) => {
@@ -29,10 +30,12 @@ net.createServer((connection) => {
 	connection.write("Seja bem vindo!");
 	connection.on('data', (message) => send(message, connection));
 	connection.on('end', () => end(connection));
-	process.stdin.on('readable', () => {
-		let message = process.stdin.read();
+	read.line((chunk) => {
+		let message = chunk;
 		if(!message) return;
 		let nickname = "Admin";
-		broadcast(nickname+" > "+message, connections);
+		broadcast(nickname+" > "+message, connection);
+
 	});
+
 }).listen(3000);
