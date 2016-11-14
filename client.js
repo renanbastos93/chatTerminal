@@ -11,6 +11,5 @@ client.on('connect', () => client.write("Entrou na sala"));
 client.on('end', () => process.exit());
 
 read((message) => {
-	msgVerify(message);
-	client.write(message.toString().replace(/\n/, ''))
+	client.write(message);
 });

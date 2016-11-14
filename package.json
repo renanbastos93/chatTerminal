@@ -9,6 +9,7 @@
   "author": "Renan Bastos - (renanbastos.tec@gmail.com)",
   "license": "ISC",
   "dependencies": {
-    "net": "^1.0.2"
+    "net": "^1.0.2",
+    "readline": "^1.3.0"
   }
 }
