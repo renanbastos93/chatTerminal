@@ -1,6 +1,5 @@
 var net = require('net');
 
-var connections = [];
 var FUNC = {};
 var emoji = {
         modhappy: ': )',
@@ -30,16 +29,12 @@ FUNC.getEmoji = function(attr){
     return mood;
 };
 
-
 net.createServer((connection) => {
-    connections.push(connection);
-
 	connection.on('data', (message) => {
         var strMessage = message.toString();
         var moodAttr = FUNC.getFirstWord(strMessage);
         var mood = FUNC.getEmoji(moodAttr);
-        
-        connection.write(mood + ' ' + strMessage);
+        connection.write(mood + ' ' + strMessage + '\n');
     });
 	// connection.on('end', () => end(connection));
 }).listen(2112);

@@ -44,9 +44,9 @@ net.createServer((connection) => {
     connection.write('Wellcome');
 	
     connection.on('data', (message) => {
+    	//mod\w+(\s|\?|\!|\.)
         client.write(message);
-
-        client.on('data', (message) => SERVER.send(message, connection) );
+        // client.on('data', (message) => SERVER.send(message, connection) );
         //SERVER.send(message, connection)
     });
 	
